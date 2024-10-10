@@ -1,4 +1,4 @@
-# Zig lineReader
+# Zig LineReader
 
 A general purpose library for Zig.
 
