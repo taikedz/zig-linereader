@@ -1,5 +1,0 @@
-Add build.zig and build.zig.zon
-
-Enable for use as command and as lib.
-
-Allow import from tarball
