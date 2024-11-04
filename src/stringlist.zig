@@ -88,8 +88,8 @@ pub const StringList = struct {
     }
 
 
-    pub fn loadLinesContaining(self:*StringList, needle:[]const u8, other:*const StringList) !void {
-        for(other.list.items) |item| {
+    pub fn loadLinesContaining(self:*StringList, needle:[]const u8, source:*const StringList) !void {
+        for(source.list.items) |item| {
             if(std.mem.containsAtLeast(u8, item, 1, needle) ) {
                 try self.append(item);
             }
