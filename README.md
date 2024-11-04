@@ -1,6 +1,6 @@
 # Zig LineReader
 
-A general purpose library for Zig.
+A Quality-Of-Life library to make common string accumulation operations easier for developers coming in from higher-abstraction languages.
 
-Provides a one-call utility to read text files and perform line-oriented operations.
-
+Sometimes, you just want to work with "ASCII files at relative path-P" and "use strings."
+This library provides an abstraction for this simple but common use-case.

@@ -35,7 +35,7 @@ pub const StringList = struct {
         }
     }
 
-    /// Invlaidate all the contents of the struct, but not itself.
+    /// Invalidate all the contents of the struct, but not itself.
     /// After clearing, the StringList can continue to accumulate new data.
     pub fn clear(self:*StringList) void {
         while(self.list.popOrNull() ) |item| {
@@ -96,6 +96,10 @@ pub const StringList = struct {
         }
     }
 
+    pub fn loadLinesFromString(self:*StringList, data:*[]const u8, sep:[]const u8) !void {
+        // TODO: split along the separator, and append each line to the current StringList
+    }
+
 };
 
 
@@ -127,10 +131,7 @@ test {
 test {
     var sr = StringList.init(std.testing.allocator);
     defer sr.destroy();
-
-    try sr.append("Alex");
-    try sr.append("Bub");
-    try sr.append("Charle");
+    try sr.loadLinesFromString("Alex:Bub:Charle", ":");
 
     var sr_le = StringList.init(std.testing.allocator);
     defer sr_le.destroy();
